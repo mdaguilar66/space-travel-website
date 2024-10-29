@@ -1,22 +1,53 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+        rel="stylesheet">
         
-        <script src="" async defer></script>
-    </body>
+    <link rel="stylesheet" href="index.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="logo" class="logo">
+        </div>
+        <nav>
+            <ul class="primary-navigation underline-indicators flex">
+                <li class="active"><span>00</span><a class="uppercase text-white letter-spacing-2" href="#">Home</a>
+                <li><span>01</span><a class="uppercase text-white letter-spacing-2" href="#">Destination</a>
+                <li><span>02</span><a class="uppercase text-white letter-spacing-2" href="#">Crew</a>
+                <li><span>03</span><a class="uppercase text-white letter-spacing-2" href="#">Technology</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="grid-container">
+        <div>
+            <h1 class="text-light fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to
+                <span class="fs-900 ff-serif text-white d-block">Space</span>
+            </h1>
+            <p class="fs-400 ff-sans-normal text-light">
+                Let’s face it; if you want to go to space, you might as well genuinely go to 
+                outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                because we’ll give you a truly out of this world experience!
+            </p>
+        </div>
+        
+        <div style="margin-top: 5rem;">
+            <a href="#" class="large-button fs-600 uppercase text-dark bg-white">Explore</a>
+        </div>
+    </div>
+
+</body>
 </html>
