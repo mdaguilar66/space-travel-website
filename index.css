@@ -243,11 +243,11 @@ select {
     padding: 0 2em;
 }
 
-.primary-header nav {
+/* .primary-header nav {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(40px);
     padding: 1em 2em;
-}
+} */
 
 /* numbered-title */
 .numbered-title {
@@ -293,13 +293,33 @@ select {
     transform: scale(1.5);
 }
 
-/* primary-navigation */
 .primary-navigation {
     --gap: 5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    justify-content: center;
+    background-color: rgba(var(--color-white), 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* primary-navigation */
+@media (max-width: 35rem) {
+    .primary-navigation {
+        --gap: 3rem;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        inset: 0 0 0 30%;
+        z-index: 1000;
+        flex-direction: column;
+        padding: min(20rem, 15vh) 2rem;
+    }
+
+    .primary-navigation.underline-indicators > *::after  {
+        display: none;
+    }
 }
 
 .primary-navigation li {
@@ -315,6 +335,12 @@ select {
     text-decoration: none;
     font-weight: 400;
     margin-left: 12px;
+}
+
+@media (min-width: 35em) {
+    .nav-button-mobile {
+        display: none;
+    }
 }
 
 /* tab-list */
@@ -389,5 +415,22 @@ body {
 @media (min-width: 45em) {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
+    }
+}
+
+.home .primary-navigation::after {
+    display: none;
+    content: '';
+    position: absolute;
+    background-color: rgba(var(--color-white), 0.25);
+    height: 2px;
+    left: -52%;
+    top: 50%;
+    width: 50%;
+}
+
+@media (min-width: 35em) {
+    .home .primary-navigation::after {
+        display: block;
     }
 }
