@@ -18,22 +18,24 @@
 </head>
 <body class="home">
 
+    <a class="skip-to-content" href="#main" style="color: white">Skip to content</a>
+
     <header class="primary-header flex">
-        <div>
+        <div class="logo-container">
             <img src="./assets/shared/logo.svg" alt="logo" class="logo">
         </div>
         <button class="nav-button-mobile" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
         <nav>
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
-                <li class="active"><span>00</span><a class="uppercase text-white letter-spacing-2" href="#">Home</a>
-                <li><span>01</span><a class="uppercase text-white letter-spacing-2" href="#">Destination</a>
-                <li><span>02</span><a class="uppercase text-white letter-spacing-2" href="#">Crew</a>
-                <li><span>03</span><a class="uppercase text-white letter-spacing-2" href="#">Technology</a>
+                <li class="active"><span aria-hidden="true">00</span><a class="uppercase text-white letter-spacing-2" href="#">Home</a>
+                <li><span aria-hidden="true">01</span><a class="uppercase text-white letter-spacing-2" href="#">Destination</a>
+                <li><span aria-hidden="true">02</span><a class="uppercase text-white letter-spacing-2" href="#">Crew</a>
+                <li><span aria-hidden="true">03</span><a class="uppercase text-white letter-spacing-2" href="#">Technology</a>
             </ul>
         </nav>
     </header>
 
-    <div class="grid-container grid-container--home">
+    <main id="main" class="grid-container grid-container--home">
         <div>
             <h1 class="text-light fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to
                 <span class="fs-900 ff-serif text-white d-block">Space</span>
@@ -48,7 +50,7 @@
         <div>
             <a href="#" class="large-button uppercase text-dark bg-white">Explore</a>
         </div>
-    </div>
+    </main>
 
     <script type="text/javascript" src='./index.js'></script>
 </body>
