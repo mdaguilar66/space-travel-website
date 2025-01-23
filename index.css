@@ -96,6 +96,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr;
+    overflow-x: hidden;
 }
 
 /* make images easier to work with */
@@ -293,32 +294,21 @@ select {
     transform: scale(1.5);
 }
 
+/* primary-navigation */
 .primary-navigation {
     --gap: 5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: rgba(var(--color-white), 0.1);
+    background-color: rgb(var(--color-dark), 0.95);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
-/* primary-navigation */
-@media (max-width: 35rem) {
+@supports (backdrop-filter: blur(20px)) {
     .primary-navigation {
-        --gap: 3rem;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        inset: 0 0 0 30%;
-        z-index: 1000;
-        flex-direction: column;
-        padding: min(20rem, 15vh) 2rem;
-    }
-
-    .primary-navigation.underline-indicators > *::after  {
-        display: none;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background-color: rgba(var(--color-white), 0.1);
     }
 }
 
@@ -337,9 +327,53 @@ select {
     margin-left: 12px;
 }
 
-@media (min-width: 35em) {
-    .nav-button-mobile {
+.nav-button-mobile {
+    display: none;
+}
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        --gap: 3rem;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        inset: 0 0 0 30%;
+        z-index: 1000;
+        flex-direction: column;
+        padding: min(20rem, 15vh) 2rem;
+        transform: translateX(100%);
+        transition: transform 500ms ease-in-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .primary-navigation.underline-indicators > *::after  {
         display: none;
+    }
+
+    .nav-button-mobile {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1rem;
+        top: 2rem;
+        background: transparent;
+        background-image: url(./assets/shared/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: 0;
+    }
+
+    .nav-button-mobile[aria-expanded="true"] {
+        background-image: url(./assets/shared/icon-close.svg);
+    }
+
+    .mobile-nav-toggle:focus-visible {
+        outline: 5px solid white;
+        outline-offset: 5px;
     }
 }
 

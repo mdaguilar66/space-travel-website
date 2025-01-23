@@ -22,9 +22,9 @@
         <div>
             <img src="./assets/shared/logo.svg" alt="logo" class="logo">
         </div>
-        <button class="nav-button-mobile" aria-controls="primary-navigation"><img src="./assets/shared/icon-hamburger.svg" alt=""><span class="sr-only" aria-expanded="false">Menu</span></button>
+        <button class="nav-button-mobile" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
         <nav>
-            <ul id="primary-navigation" class="primary-navigation underline-indicators flex">
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
                 <li class="active"><span>00</span><a class="uppercase text-white letter-spacing-2" href="#">Home</a>
                 <li><span>01</span><a class="uppercase text-white letter-spacing-2" href="#">Destination</a>
                 <li><span>02</span><a class="uppercase text-white letter-spacing-2" href="#">Crew</a>
@@ -50,5 +50,6 @@
         </div>
     </div>
 
+    <script type="text/javascript" src='./index.js'></script>
 </body>
 </html>
