@@ -148,6 +148,7 @@ select {
     margin-top: var(--flow-space, 1rem);
 }
 
+/* layout */
 .container {
     padding-inline: 2em;
     margin-inline: auto;
@@ -161,20 +162,22 @@ select {
     padding-inline: 1rem;
 }
 
+
+
 @media (min-width: 45em) {
-    .grid-container {
+    .grid-container--home {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
         place-content: end;
-        padding-bottom: max(6rem, 20vh);
+        padding-bottom: max(6rem, 20vh);        
     }
     
-    .grid-container > *:first-child {
+    .grid-container--home > *:first-child {
         grid-column: 2;
     }
 
-    .grid-container > *:last-child {
+    .grid-container--home > *:last-child {
         grid-column: 3;
     }
 }
@@ -496,12 +499,17 @@ body {
         background-image: url(./assets/home/background-home-desktop.jpg);
     }
 }
+/* Pages */
+.page-content div {
+    flex: 1 1 
+}
 
 /* Destination page */
 .destination-page {
-    background-image: url(./assets/destination/background-destination-mobile.jpg);
+    /* background-image: url(./assets/destination/background-destination-mobile.jpg); */
+    background-color: darkblue;
 }
-
+/* 
 @media (min-width: 35em) {
     .destination-page {
         background-image: url(./assets/destination/background-destination-tablet.jpg);
@@ -512,7 +520,7 @@ body {
     .destination-page {
         background-image: url(./assets/destination/background-destination-desktop.jpg);
     }
-}
+} */
 
 /* Crew page */
 .crew-page {
@@ -546,4 +554,23 @@ body {
     .technology-page {
         background-image: url(./assets/technology/background-technology-desktop.jpg);
     }    
+}
+
+/* ------------------------------ */
+/* Destination page               */
+/* ------------------------------ */
+.grid-container--destination > img {
+    max-width: 60%;
+}
+
+.grid-container--destination > h3 {
+    margin-bottom: 1rem;
+}
+
+.destination-page--header, .destination-page--content {
+    margin-bottom: 2rem;
+}
+
+.destination-page--meta {
+    flex-direction: column;
 }
